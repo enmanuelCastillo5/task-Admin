@@ -1,5 +1,7 @@
 @layout('main')
   @section('content')
     <h1>{{ task.title }}</h1>
-<p> {{ task.body }} </p>
+  <p> {{ task.body }} </p>
+  <hr>
+  <a href="/tasks/edit/{{ task.id }}" class='btn btn-outline-success float-left'>Editar</a>
   @endsection
