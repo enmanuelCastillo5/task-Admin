@@ -4,4 +4,9 @@
   <p> {{ task.body }} </p>
   <hr>
   <a href="/tasks/edit/{{ task.id }}" class='btn btn-outline-success float-left'>Editar</a>
+
+<form action="{{'/tasks/'+ task.id +'?_method=DELETE'}}" method="POST">
+    {{ csrfField() }}
+    <button type="submit" class='btn btn-outline-danger mx-4'>Eliminar</button>
+  </form>
   @endsection

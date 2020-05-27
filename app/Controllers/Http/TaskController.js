@@ -43,6 +43,13 @@ class TaskController {
     await task.save()
     return response.redirect('/tasks')
   }
+
+  async destroy({params, response}){
+		const task = await Task.find(params.id)
+		await task.delete()
+
+		return response.redirect('/tasks')
+	}
 }
 
 module.exports = TaskController
